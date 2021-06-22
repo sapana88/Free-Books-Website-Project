@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Register</title>
+{% endblock %}
+
+{% block content %}
+
+<div id="container" align="center">
+  <div id = 'container'>
+    <div class = 'header'>
+      <h2>Registration</h2>
+    </div><br/>
+    <form action = "{% url 'login' %}" method = 'POST'>
+      {% csrf_token %}
+      <div id = 'form-control'>
+          <label>Username:</label>
+          {{register_form.username}}
+        <br/>
+        
+          <label>Email ID:</label>
+          {{register_form.email}}
+        <br/>
+
+          <label>Password:</label>
+          {{register_form.password1}}
+        <br/>
+
+          <label>Confirm Password:</label>
+          {{register_form.password2}}
+        </div>
+      
+
+          {{register_form.errors}}
+
+      <div id = 'haveAnAccount'>
+        <u>Already have an account?</u>
+        <a href = "{% url 'login' %}"><strong>Login</strong></a>
+      </div>
+      <br/>
+
+      <button class="btn btn-success" type = 'submit' id = 'submitButton'>Register</button>
+    </form>
+  </div>
+  {% endblock %}

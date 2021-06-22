@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Home Page</title>
+{% endblock %}
+
+{% block content %}
+<marquee>   
+<h1><b>Welcome To Free Books Website</b></h1>
+</marquee> 
+<div class="container" align="center">
+    <div class="row"><h3>Recommended Books</h3></div><br/>
+    <div class="row">
+        {% for book in recommended_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px"><br/><br/><br/>
+                    </div>
+                </div>
+            </a>    
+        </div>
+        {% endfor %}   
+    </div>
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Fiction Books</h3></div><br/>
+    <div class="row">
+        {% for book in fiction_books %}
+        <div class="col-6 col-sm-4 col-md-4">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Business Books</h3></div><br/>
+    <div class="row">
+        {% for book in business_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Drama Books</h3></div><br/>
+    <div class="row">
+        {% for book in drama_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Health Books</h3></div><br/>
+    <div class="row">
+        {% for book in  health_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Mathematics Books</h3></div><br/>
+    <div class="row">
+        {% for book in mathematics_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Biography Books</h3></div><br/>
+    <div class="row">
+        {% for book in biography_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Magazine Books</h3></div><br/>
+    <div class="row">
+        {% for book in magazine_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Children Books</h3></div><br/>
+    <div class="row">
+        {% for book in children_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Food Recipes Books</h3></div><br/>
+    <div class="row">
+        {% for book in food_recipes_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Beauty & Fashion Books</h3></div><br/>
+    <div class="row">
+        {% for book in beauty_fashion_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Horror Books</h3></div><br/>
+    <div class="row">
+        {% for book in horror_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Science Books</h3></div><br/>
+    <div class="row">
+        {% for book in science_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+
+<br/><br/><hr/>
+
+<div class="container">
+    <div class="row"><h3>Top Space Technology Books</h3></div><br/>
+    <div class="row">
+        {% for book in space_technology_books %}
+        <div class="col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2">
+            <a href="{% url 'book_details' book.slug %}">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <img src="{{book.image.url}}" width="200px" height="250px">
+                    </div>
+                </div>
+            </a>    
+        </div> 
+        {% endfor %}   
+    </div>  
+</div>
+{% endblock %}

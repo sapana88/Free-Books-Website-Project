@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>All Books</title>
+{% endblock %}
+
+{% block content %}
+<div class = 'container' style = "padding-left: 0px">
+  <div class = 'row'>
+   {% for book in books %}
+    <div class = 'col- col-sm-4 col-md-4 col-lg-3 col-xl-2'>
+        <a href = "{% url 'book_details' book.slug %}">      
+  <div>
+    <div class="uk-card uk-card-default uk-card-body">  
+        &nbsp;<img src = "{{book.image.url}}" width="200px" height="250px"> &nbsp;
+    </div><br/><br/>
+  </div><br/><br/>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

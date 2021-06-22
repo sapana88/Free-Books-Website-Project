@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Search Books</title>
+{% endblock %}
+
+{% block content %}
+<div class = 'container' align="center">
+  
+  {% if searched_books %}
+      {% for book in searched_books %}
+      {% csrf_token %}
+      <a href = "{% url 'book_details' book.slug %}">
+        <div>
+          <div class="col-lg-4 mb-2">
+              <div class="uk-card uk-card-default uk-card-body"> 
+                  <img src = "{{book.image.url}}" width="200px" height="300px">
+              </div>
+          </div>
+        </div>  
+      </a>      
+      {% endfor %}
+      {% else %}
+      <div class="container" align="center">
+          <h5><u>Sorry! This Book Is Not Available</u></h5>
+      </div>
+  {% endif %}
+  
+</div>
+{% endblock %}

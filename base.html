@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    {% block title %}
+    <title>Base Page</title>
+    {% endblock %}
+    
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="book_details.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+  <div class="row" id="mainHeader" style=" border-bottom: 33px solid ;">
+      <div class="col-md-20 sss"></div>
+      <div class="row"></div>
+  </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" align="center">
+            <div id="logo">
+                <img src="{% static 'images/Books.jfif' %}" width="100px" height="100px">
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div style = 'width: auto; display: flex'>
+                <div class="nav-link" href=""> 
+                    <button class="btn btn-secondary" type="button" id="MenuButton">
+                    Hello {{user.username}}
+                    </button>
+                </div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-link">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a class="nav-link active" href="{% url 'all_books' %}">Books</a>
+                    </li>
+                </ul>
+               
+
+                    <a class="nav-link" href="{% url 'register' %}">
+                        <button type="button" class="btn btn-outline-primary">SignUp</button>
+                    </a>
+                    <a class="nav-link" href="{% url 'login' %}">
+                        <button type="button" class="btn btn-outline-success">Login</button>
+                    </a>
+                    <a class="nav-link" href="{% url 'logout' %}">
+                        <button type="button" class="btn btn-outline-danger">Logout</button>
+                    </a>  
+                 
+                    <form class="form-inline my-2 my-lg-0" method='POST' action="{% url 'book_search' %}">
+                        {% csrf_token %}
+                        {{search_form.name_of_book}}
+                        <input class="form-control" type="text" name="search" id="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>    
+            </div>
+            </div>
+        </div>    
+    </nav>
+
+    
+
+    <div class="row" id="mainHeader" style=" border-bottom: 33px solid ;">
+        <div class="col-md-20 sss"></div>
+        <div class="row"></div>
+    </div>
+    
+    <br><br>
+
+{% block content %}
+<h1>Hello World</h1>
+{% endblock %}
+<br/>
+
+<div class="container" align='center'>
+    <footer>
+        <h3><strong>*** Enjoy Your Day With Free Books ***</strong></h3>
+    </footer>
+</div>
+
+<a href="#mainHeader" align="center" style="color: red;"><h3><u>Top</u></h3>
+
+</body>
+</html>
